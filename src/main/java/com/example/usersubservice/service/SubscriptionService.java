@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -47,15 +48,12 @@ public class SubscriptionService {
     }
 
     @Transactional(readOnly = true)
-    public String getThreePopularSubscription(){
-        List<Subscription> topThreeSubs = subscriptionRepository.findThreePopular();
-        StringBuilder topThree = new StringBuilder();
-
-        for (Subscription subscription : topThreeSubs){
-            topThree.append(subscription.getServiceName()).append(" ");
-        }
-
-        log.info("Getting top 3 subscription: {}", topThree);
-        return topThree.toString();
+    public List<String> getThreePopularSubscription(){
+        List<String> list = subscriptionRepository.findThreePopular().stream()
+                .limit(3)
+                .map(arr -> (String) arr[0])
+                .collect(Collectors.toList());
+        log.info("Getting top 3 subscription: {}", list);
+        return list;
     }
 }

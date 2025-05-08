@@ -1,7 +1,8 @@
 package com.example.usersubservice.controller;
 
-import com.example.usersubservice.model.Subscription;
 import com.example.usersubservice.service.SubscriptionService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,12 +15,14 @@ import java.util.List;
 @RestController
 @RequestMapping("/subscription/top")
 @RequiredArgsConstructor
+@Tag(name = "Subscription Top Management", description = "Операции статистики для пользователя")
 public class SubscriptionStatsController {
     private final SubscriptionService subscriptionService;
 
+    @Operation(summary = "Получение топ 3 подписок", description = "Получение топ 3 подписок")
     @GetMapping
-    private ResponseEntity<String> getTopSubscriptions(){
-        String list = subscriptionService.getThreePopularSubscription();
+    public ResponseEntity<List<String>> getTopSubscriptions(){
+        List<String> list = subscriptionService.getThreePopularSubscription();
         return ResponseEntity.status(HttpStatus.OK).body(list);
     }
 }

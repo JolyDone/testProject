@@ -1,5 +1,6 @@
 package com.example.usersubservice.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -20,7 +21,8 @@ public class User {
     @Column(nullable = false)
     private String email;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Subscription> subscriptionList = new ArrayList<>();
 
 }
