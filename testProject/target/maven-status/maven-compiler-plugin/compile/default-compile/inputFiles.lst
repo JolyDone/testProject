@@ -1,0 +1,14 @@
+/Users/jolydone/IdeaProjects/testProject/src/main/java/com/example/usersubservice/repository/SubscriptionRepository.java
+/Users/jolydone/IdeaProjects/testProject/src/main/java/com/example/usersubservice/exception/UserNotFoundException.java
+/Users/jolydone/IdeaProjects/testProject/src/main/java/com/example/usersubservice/controller/SubscriptionController.java
+/Users/jolydone/IdeaProjects/testProject/src/main/java/com/example/usersubservice/controller/UserController.java
+/Users/jolydone/IdeaProjects/testProject/src/main/java/com/example/usersubservice/service/UserService.java
+/Users/jolydone/IdeaProjects/testProject/src/main/java/com/example/usersubservice/exception/EmailAreNotExistsException.java
+/Users/jolydone/IdeaProjects/testProject/src/main/java/com/example/usersubservice/model/User.java
+/Users/jolydone/IdeaProjects/testProject/src/main/java/com/example/usersubservice/exception/SubscriptionNotFoundException.java
+/Users/jolydone/IdeaProjects/testProject/src/main/java/com/example/usersubservice/UserSubServiceApplication.java
+/Users/jolydone/IdeaProjects/testProject/src/main/java/com/example/usersubservice/model/Subscription.java
+/Users/jolydone/IdeaProjects/testProject/src/main/java/com/example/usersubservice/exception/EmailAlreadyExistException.java
+/Users/jolydone/IdeaProjects/testProject/src/main/java/com/example/usersubservice/repository/UserRepository.java
+/Users/jolydone/IdeaProjects/testProject/src/main/java/com/example/usersubservice/service/SubscriptionService.java
+/Users/jolydone/IdeaProjects/testProject/src/main/java/com/example/usersubservice/controller/SubscriptionStatsController.java

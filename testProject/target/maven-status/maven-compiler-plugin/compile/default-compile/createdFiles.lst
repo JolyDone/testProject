@@ -1,0 +1,14 @@
+com/example/usersubservice/model/User.class
+com/example/usersubservice/repository/UserRepository.class
+com/example/usersubservice/model/Subscription.class
+com/example/usersubservice/repository/SubscriptionRepository.class
+com/example/usersubservice/exception/EmailAlreadyExistException.class
+com/example/usersubservice/exception/UserNotFoundException.class
+com/example/usersubservice/service/UserService.class
+com/example/usersubservice/service/SubscriptionService.class
+com/example/usersubservice/UserSubServiceApplication.class
+com/example/usersubservice/controller/SubscriptionController.class
+com/example/usersubservice/controller/SubscriptionStatsController.class
+com/example/usersubservice/exception/EmailAreNotExistsException.class
+com/example/usersubservice/exception/SubscriptionNotFoundException.class
+com/example/usersubservice/controller/UserController.class
