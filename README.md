@@ -28,7 +28,6 @@ docker-compose up --build
 ## Доступ к API
 
 - Swagger UI: http://localhost:8080/swagger-ui.html
-- JSON API Docs: http://localhost:8080/v3/api-docs
 
 ## Примеры запросов cURL
 
@@ -39,8 +38,8 @@ docker-compose up --build
 curl -X POST http://localhost:8080/api/v1/users \
 -H "Content-Type: application/json" \
 -d '{
-    "name": "John Doe",
-    "email": "john.doe@example.com"
+    "name": "John",
+    "email": "john@example.com"
 }'
 ```
 
@@ -119,34 +118,3 @@ curl -X GET http://localhost:8080/subscription/top
 }
 ```
 
-## Docker
-
-Для запуска в Docker:
-
-1. Собрать образ:
-```bash
-docker build -t user-subscription-service .
-```
-
-2. Запустить сервис с PostgreSQL:
-```bash
-docker-compose up
-```
-
-## Тестирование через Swagger UI
-
-1. Откройте http://localhost:8080/swagger-ui.html
-2. Выберите нужный контроллер (User или Subscription)
-3. Нажмите "Try it out" для любого endpoint
-4. Заполните параметры и отправьте запрос
-
-## Особенности
-
-- Фиксированные ID для типов подписок (Netflix=1, YouTube=2 и т.д.)
-- Валидация входных данных
-- Логирование всех операций
-- Полная документация API через Swagger
-
-## Лицензия
-
-MIT License
