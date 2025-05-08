@@ -5,7 +5,6 @@ import com.example.usersubservice.exception.EmailAreNotExistsException;
 import com.example.usersubservice.exception.UserNotFoundException;
 import com.example.usersubservice.model.User;
 import com.example.usersubservice.repository.UserRepository;
-import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -22,7 +21,7 @@ public class UserService {
     @Transactional
     public User createUser(User user){
         log.info("Creating new user with email: {}", user.getEmail());
-        if (userRepository.findEmailExist(user.getEmail())) {
+        if (userRepository.existsByEmail(user.getEmail())) {
             throw new EmailAlreadyExistException(user.getEmail());
         }
 
@@ -31,7 +30,7 @@ public class UserService {
     @Transactional(readOnly = true)
     public boolean findUserByEmail(String email) throws EmailAreNotExistsException {
         log.info("Finding user with email: {}", email);
-        return userRepository.findEmailExist(email);
+        return userRepository.existsByEmail(email);
     }
 
     @Transactional(readOnly = true)
